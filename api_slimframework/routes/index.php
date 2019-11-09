@@ -5,6 +5,7 @@ use App\Controllers\PromotorController;
 use App\Controllers\InspecaoController;
 use App\Controllers\Historico_inspecaoController;
 use App\Controllers\DocumentosController;
+use App\Controllers\DashboardController;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -66,6 +67,13 @@ $app->put('/historico_inspecao/{id}', Historico_inspecaoController::class . ':At
 $app->get('/documentos', DocumentosController::class . ':Listar');
 $app->post('/documentos', DocumentosController::class . ':Criar');
 $app->put('/documentos/{id}', DocumentosController::class . ':Atualizar');
+
+/**
+ * @author Meivysom Anjos
+ * Routes responsaveis por trazer e entregar ao servidor as informações do dashboard
+ */
+$app->get('/dashboard_entidades', DashboardController::class . ':ListarEntidade');
+$app->get('/dashboard_roteiro', DashboardController::class . ':Roteiro');
 
 
 $app->run();

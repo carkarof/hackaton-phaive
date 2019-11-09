@@ -16,7 +16,7 @@ final class AnimaisController
      */
     public function Listar(Request $request, Response $response, array $args): Response
     {
-
+        var_dump("teste");die;
         $AnimaisDAO = new AnimaisDAO;
         $dados = $AnimaisDAO->Listar();
 
