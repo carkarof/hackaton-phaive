@@ -14,10 +14,12 @@
                         <p> Uma pergunta ? </p>
                         </div>
                         <div slot="footer" class='col-xl-12 order-xl-1'>
-                          <input type="radio" name="opt_resposta" id="Sim" value="Sim"  >
+                        <form >
+                          <input type="radio" name="opt_resposta" id="Sim" value="Sim" checked >
                           <label for="Sim" class='col-3'>Sim</label>                          
-                          <input type="radio" name="opt_resposta" id="Nao" value="Não" >
-                          <label for="Nao" class="col-3">Não</label>                          
+                          <input type="radio" name="opt_resposta" id="Nao" value="Não"  >
+                          <label for="Nao" class="col-3">Não</label> 
+                          </form>                         
                         </div>                          
                     </card>                                        
                 </div>

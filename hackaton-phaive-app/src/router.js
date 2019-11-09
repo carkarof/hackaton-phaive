@@ -34,9 +34,9 @@ export default new Router({
           component: () => import(/* webpackChunkName: "demo" */ './views/Icons.vue')
         },
         {
-          path: '/profile',
-          name: 'profile',
-          component: () => import(/* webpackChunkName: "demo" */ './views/UserProfile.vue')
+          path: '/dimensao',
+          name: 'dimensao',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Dimensao.vue')
         },
         {
           path: '/maps',

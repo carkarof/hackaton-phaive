@@ -4,56 +4,59 @@
             <!-- Card stats -->
             <div class="row col-md-12" style='justify-content:center'  >
              <div class="col-xl-3 col-lg-6 ">
-                  <router-link to="/profile">
+                  <router-link to="/dimensao">
                     <stats-card title="Total traffic"
                                 type="gradient-red"
                                 sub-title="350,897"                                
                                 class="mb-4 mb-xl-0"                                
-                                style="cursor:pointer"
+                                style="cursor:pointer; background-color:#172B4D;"
                                    >
-                        <h2>Dimensão 1 - só que o nome inteiro</h2>                        
+                        <h2 style="color:#FFFFFF">Dimensão 1 - só que o nome inteiro</h2>  
+                         <img src="img/brand/concluido.png"  >                   
                     </stats-card>
                     </router-link>
                 </div>
                 <div class="col-xl-3 col-lg-6" >
-                    <router-link to='/profile'>
+                    <router-link to='/dimensao'>
                     <stats-card title="Total traffic"
                                 type="gradient-orange"
                                 sub-title="2,356"                                
                                 class="mb-4 mb-xl-0"
-                                style="cursor:pointer"
+                                style="cursor:pointer; background-color:#172B4D;"
                     >
-                    <h2>Dimensão 1 - só que o nome inteiro</h2>                        
+                    <h2 style="color:#FFFFFF">Dimensão 1 - só que o nome inteiro</h2>
+                     <img src="img/brand/concluido.png"  >                        
                     </stats-card>
-                    <div id='concluido' styles='border-radius:5px; height:100px; background-color:dark-green;   '></div>
                     </router-link>
                 </div>
               </div>
               <br>              
               <div class="row col-md-12" style="justify-content:center">
                 <div class="col-xl-3 col-lg-6">
-                  <router-link to='/profile'>
+                  <router-link to='/dimensao'>
                     <stats-card title="Sales"
                                 type="gradient-green"
                                 sub-title="924"                                
                                 class="mb-4 mb-xl-0"
                                 style="cursor:pointer;
-                                       backgroundColor:"
+                                       background-color:#172B4D;"
                     >
-                    <h2>Dimensão 1 - só que o nome inteiro</h2>
+                    <h2 style='color:#FFFFFF'>Dimensão 1 - só que o nome inteiro</h2>
+                    <img src="img/brand/concluido.png"  >
                     </stats-card>
                   </router-link>
                 </div>
                 <div class="col-xl-3 col-lg-6">
-                    <router-link to='/profile'>
+                    <router-link to='/dimensao'>
                     <stats-card title="Performance"
                                 type="gradient-info"
                                 sub-title="49,65%"                                
                                 class="mb-4 mb-xl-0"
-                                style="cursor:pointer"
+                                style="cursor:pointer;background-color:#172B4D;"
                     >
                                                 
-                    <h2>Dimensão 1 - só que o nome inteiro</h2>
+                    <h2 style='color:#FFFFFF'>Dimensão 1 - só que o nome inteiro</h2>
+                    <img src="img/brand/concluido.png"  >
                     </stats-card>
                     </router-link>
                 </div>
