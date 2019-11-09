@@ -21,12 +21,20 @@ export default new Router({
           component: () => import(/* webpackChunkName: "demo" */ './views/Dashboard.vue')
         },
         {
-          path: '/Inspecao',
-          name: 'Inspeção',
+          path: '/inspecao',
+          name: 'inspeção',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
           // which is lazy-loaded when the route is visited.
           component: () => import(/* webpackChunkName: "demo" */ './views/Inspecao.vue')
+        },
+        {
+          path: '/roteiro',
+          name: 'roteiro',
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () => import(/* webpackChunkName: "demo" */ './views/Roteiro.vue')
         },
         {
           path: '/entidade',
