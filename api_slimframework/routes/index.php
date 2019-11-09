@@ -1,10 +1,10 @@
 <?php
 
-use App\Controller\EntidadeController;
-use App\Controller\PromotorController;
-use App\Controller\InspecaoController;
-use App\Controller\Historico_inspecaoController;
-use App\Controller\DocumentosController;
+use App\Controllers\EntidadeController;
+use App\Controllers\PromotorController;
+use App\Controllers\InspecaoController;
+use App\Controllers\Historico_inspecaoController;
+use App\Controllers\DocumentosController;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;

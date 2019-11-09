@@ -6,14 +6,7 @@
       title="Argon"
     >
       <template slot="links">
-        <sidebar-item
-          :link="{
-            name: 'Dashboard',
-            icon: 'ni ni-tv-2 text-primary',
-            path: '/dashboard'
-          }"
-        />
-
+        <sidebar-item :link="{name: 'Dashboard', icon: 'ni ni-tv-2 text-primary', path: '/dashboard'}"/>
         <sidebar-item :link="{name: 'Icons', icon: 'ni ni-planet text-blue', path: '/icons'}"/>
         <sidebar-item :link="{name: 'Maps', icon: 'ni ni-pin-3 text-orange', path: '/maps'}"/>
         <sidebar-item :link="{name: 'User Profile', icon: 'ni ni-single-02 text-yellow', path: '/profile'}"/>
@@ -31,20 +24,20 @@
           <!-- your content here -->
           <router-view></router-view>
         </fade-transition>
-        <content-footer v-if="!$route.meta.hideFooter"></content-footer>
+        <!-- <content-footer v-if="!$route.meta.hideFooter"></content-footer> -->
       </div>
     </div>
   </div>
 </template>
 <script>
   import DashboardNavbar from './DashboardNavbar.vue';
-  import ContentFooter from './ContentFooter.vue';
+  // import ContentFooter from './ContentFooter.vue';
   import { FadeTransition } from 'vue2-transitions';
 
   export default {
     components: {
       DashboardNavbar,
-      ContentFooter,
+      // ContentFooter,
       FadeTransition
     },
     data() {

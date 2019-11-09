@@ -17,6 +17,7 @@ import StatsCard from "../components/StatsCard";
 import Modal from "../components/Modal";
 import TabPane from "../components/Tabs/TabPane";
 import Tabs from "../components/Tabs/Tabs";
+import Card2 from "../components/Card2";
 
 export default {
   install(Vue) {
@@ -35,6 +36,7 @@ export default {
     Vue.component(BaseTable.name, BaseTable);
     Vue.component(BaseHeader.name, BaseHeader);
     Vue.component(Card.name, Card);
+    Vue.component(Card2.name, Card2);
     Vue.component(StatsCard.name, StatsCard);
     Vue.component(Modal.name, Modal);
     Vue.component(TabPane.name, TabPane);
