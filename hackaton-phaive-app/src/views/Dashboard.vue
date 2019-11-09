@@ -1,75 +1,85 @@
 <template>
     <div>
-        <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-8">
-            <!-- Card stats -->
-            <div class="row col-md-12" style='justify-content:center'  >
-             <div class="col-xl-3 col-lg-6 ">
-                  <router-link to="/profile">
-                    <stats-card title="Total traffic"
-                                type="gradient-red"
-                                sub-title="350,897"                                
-                                class="mb-4 mb-xl-0"                                
-                                style="cursor:pointer"
-                                   >
-                        <h2>Dimensão 1 - só que o nome inteiro</h2>                        
-                    </stats-card>
-                    </router-link>
-                </div>
-                <div class="col-xl-3 col-lg-6" >
-                    <router-link to='/profile'>
-                    <stats-card title="Total traffic"
-                                type="gradient-orange"
-                                sub-title="2,356"                                
-                                class="mb-4 mb-xl-0"
-                                style="cursor:pointer"
-                    >
-                    <h2>Dimensão 1 - só que o nome inteiro</h2>                        
-                    </stats-card>
-                    <div id='concluido' styles='border-radius:5px; height:100px; background-color:dark-green;   '></div>
-                    </router-link>
-                </div>
-              </div>
-              <br>              
-              <div class="row col-md-12" style="justify-content:center">
-                <div class="col-xl-3 col-lg-6">
-                  <router-link to='/profile'>
-                    <stats-card title="Sales"
-                                type="gradient-green"
-                                sub-title="924"                                
-                                class="mb-4 mb-xl-0"
-                                style="cursor:pointer;
-                                       backgroundColor:"
-                    >
-                    <h2>Dimensão 1 - só que o nome inteiro</h2>
-                    </stats-card>
-                  </router-link>
-                </div>
-                <div class="col-xl-3 col-lg-6">
-                    <router-link to='/profile'>
-                    <stats-card title="Performance"
-                                type="gradient-info"
-                                sub-title="49,65%"                                
-                                class="mb-4 mb-xl-0"
-                                style="cursor:pointer"
-                    >
-                                                
-                    <h2>Dimensão 1 - só que o nome inteiro</h2>
-                    </stats-card>
-                    </router-link>
-                </div>
-            </div>
+        <base-header type="gradient-success" class="pb-6 pb-8 pt-5 pt-md-2">
+            
         </base-header>
-        <div class="container-fluid mt--6">
-          <div class="row">
-            <div class="col-xl-12 mb-5 mb-xl-0">
-              <label for="relatorio">Relatório</label>
-              <br>
-              <textarea id='relatorio' style='border-radius:6px; height:100%' class='col-md-12' />
-              <br>
-              <input type="button" value="enviar" class='btn btn-primary' style="float:right">
+
+        <!--Charts-->
+        <div class="container-fluid mt--5">
+            <div class="row">
+                <div class="col-xl-6 mb-2 mb-xl-0">
+                    <card type="default" header-classes="bg-transparent">
+                        <div slot="header" class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
+                                <h5 class="h3 text-white mb-0">Sales value</h5>
+                            </div>
+                            <div class="col">
+                                <ul class="nav nav-pills justify-content-end">
+                                    <li class="nav-item mr-2 mr-md-0">
+                                        <a class="nav-link py-2 px-3"
+                                           href="#"
+                                           :class="{active: bigLineChart.activeIndex === 0}"
+                                           @click.prevent="initBigChart(0)">
+                                            <span class="d-none d-md-block">Month</span>
+                                            <span class="d-md-none">M</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link py-2 px-3"
+                                           href="#"
+                                           :class="{active: bigLineChart.activeIndex === 1}"
+                                           @click.prevent="initBigChart(1)">
+                                            <span class="d-none d-md-block">Week</span>
+                                            <span class="d-md-none">W</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <line-chart
+                                :height="350"
+                                ref="bigChart"
+                                :chart-data="bigLineChart.chartData"
+                                :extra-options="bigLineChart.extraOptions"
+                        >
+                        </line-chart>
+
+                    </card>
+                </div>
+
+                <div class="col-xl-6">
+                    <card header-classes="bg-transparent">
+                        <div slot="header" class="row align-items-center">
+                            <div class="col">
+                                <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
+                                <h5 class="h3 mb-0">Total orders</h5>
+                            </div>
+                        </div>
+
+                        <bar-chart
+                                :height="350"
+                                ref="barChart"
+                                :chart-data="redBarChart.chartData"
+                        >
+                        </bar-chart>
+                    </card>
+                </div>
             </div>
-          </div>
-        </div>  
+            <!-- End charts-->
+
+            <!--Tables-->
+            <div class="row mt-5">
+                <div class="col-xl-6 mb-5 mb-xl-0">
+                    <page-visits-table></page-visits-table>
+                </div>
+                <div class="col-xl-6">
+                    <social-traffic-table></social-traffic-table>
+                </div>
+            </div>
+            <!--End tables-->
+        </div>
+
     </div>
 </template>
 <script>
@@ -77,9 +87,11 @@
   import * as chartConfigs from '@/components/Charts/config';
   import LineChart from '@/components/Charts/LineChart';
   import BarChart from '@/components/Charts/BarChart';
+
   // Tables
   import SocialTrafficTable from './Dashboard/SocialTrafficTable';
   import PageVisitsTable from './Dashboard/PageVisitsTable';
+
   export default {
     components: {
       LineChart,

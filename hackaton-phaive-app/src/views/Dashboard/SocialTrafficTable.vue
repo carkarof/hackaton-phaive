@@ -3,10 +3,18 @@
     <div class="card-header border-0">
       <div class="row align-items-center">
         <div class="col">
-          <h3 class="mb-0">Social traffic</h3>
+          <h3 class="mb-0">Roteiro</h3>
         </div>
         <div class="col text-right">
-          <base-button size="sm" type="primary">See all</base-button>
+          <!-- <base-button size="sm" type="primary">See all</base-button> -->
+          <base-dropdown>
+              <base-button slot="title" size="sm" type="primary" class="dropdown-toggle">
+                Filtrar por
+              </base-button>
+              <a class="dropdown-item" href="#">Entidade</a>
+              <a class="dropdown-item" href="#">Município</a>
+              <a class="dropdown-item" href="#">Status</a>
+          </base-dropdown>
         </div>
       </div>
     </div>
@@ -15,27 +23,24 @@
       <base-table thead-classes="thead-light"
                   :data="tableData">
         <template slot="columns">
-          <th>Referral</th>
-          <th>Visitors</th>
-          <th></th>
+          <th>Entidade</th>
+          <th>Município</th>
+          <th>Status</th>
         </template>
 
         <template slot-scope="{row}">
           <th scope="row">
-            {{row.name}}
+            {{row.entidade}}
           </th>
           <td>
-            {{row.visitors}}
+            {{row.municipio}}
           </td>
           <td>
             <div class="d-flex align-items-center">
-              <span class="mr-2">{{row.progress}}%</span>
-              <base-progress :type="row.progressType"
-                             class="pt-0"
-                             :show-percentage="false"
-                             :value="row.progress"
-              />
+            <span class="mr-3">{{row.status}}</span>
+            <div class="sinalizador"></div>
             </div>
+              
           </td>
         </template>
 
@@ -51,34 +56,29 @@
       return {
         tableData: [
           {
-            name: 'Facebook',
-            visitors: '1,480',
-            progress: 60,
-            progressType: 'gradient-danger',
+            entidade: 'entidade',
+            municipio: 'Salvador',
+            status: 'Ativo'
           },
           {
-            name: 'LinkedIn',
-            visitors: '5,480',
-            progress: 70,
-            progressType: 'gradient-success',
+            entidade: 'entidade',
+            municipio: 'Salvador',
+            status: 'Ativo'
           },
           {
-            name: 'Google',
-            visitors: '4,807',
-            progress: 80,
-            progressType: 'gradient-primary',
+            entidade: 'entidade',
+            municipio: 'Salvador',
+            status: 'Ativo'
           },
           {
-            name: 'Instagram',
-            visitors: '3,678',
-            progress: 75,
-            progressType: 'gradient-info',
+            entidade: 'entidade',
+            municipio: 'Salvador',
+            status: 'Ativo'
           },
           {
-            name: 'Twitter',
-            visitors: '2,645',
-            progress: 30,
-            progressType: 'gradient-warning',
+            entidade: 'entidade',
+            municipio: 'Salvador',
+            status: 'Ativo',
           }
         ]
       }
@@ -87,4 +87,13 @@
   }
 </script>
 <style>
+
+.sinalizador{
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  border-radius:50%;
+  width:10px;
+  height:10px;
+  background:#2dce89;
+}
 </style>
