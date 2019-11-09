@@ -4,8 +4,10 @@
 
       <div class="col">
         <slot>
-          <h5 class="card-title text-uppercase text-muted mb-0" v-if="title">{{title}}</h5>
-          <span class="h2 font-weight-bold mb-0" v-if="subTitle">{{subTitle}}</span>
+          <!-- <h5 class="card-title text-uppercase text-muted mb-0" v-if="title">{{title}}</h5> -->
+          <h5 class="card-title text-uppercase text-muted mb-0 text-card" v-if="title">Fundação Acolhimento Infantil</h5>
+          <!-- <span class="h2 font-weight-bold mb-0" v-if="subTitle">{{subTitle}}</span> -->
+          <span class="h5  mb-0 text-card" v-if="subTitle">Município: Salvador</span>
         </slot>
       </div>
 
@@ -19,9 +21,9 @@
       </div>
     </div>
 
-    <p class="mt-3 mb-0 text-sm">
+    <p class="mt-1 mb-0 text-sm">
       <slot name="footer">
-
+        
       </slot>
     </p>
   </card>
@@ -46,4 +48,8 @@
     }
   };
 </script>
-<style></style>
+<style>
+  .text-card{
+    color: #d0d3d8 !important
+  }
+</style>

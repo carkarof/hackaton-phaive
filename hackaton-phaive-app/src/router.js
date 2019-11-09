@@ -29,9 +29,9 @@ export default new Router({
           component: () => import(/* webpackChunkName: "demo" */ './views/Inspecao.vue')
         },
         {
-          path: '/icons',
-          name: 'icons',
-          component: () => import(/* webpackChunkName: "demo" */ './views/Icons.vue')
+          path: '/entidade',
+          name: 'entidade',
+          component: () => import(/* webpackChunkName: "demo" */ './views/Entidades.vue')
         },
         {
           path: '/dimensao',

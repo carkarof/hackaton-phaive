@@ -7,7 +7,7 @@
     >
       <template slot="links">
         <sidebar-item :link="{name: 'Dashboard', icon: 'ni ni-tv-2 text-primary', path: '/dashboard'}"/>
-        <sidebar-item :link="{name: 'Icons', icon: 'ni ni-planet text-blue', path: '/icons'}"/>
+        <sidebar-item :link="{name: 'Entidade', icon: 'ni ni-badge', path: '/entidade'}"/>
         <!-- <sidebar-item :link="{name: 'Maps', icon: 'ni ni-pin-3 text-orange', path: '/maps'}"/> -->
         <!-- <sidebar-item :link="{name: 'Dimensao', icon: 'ni ni-planet text-info', path: '/Dimensao'}"/> -->
         <!-- <sidebar-item :link="{name: 'Tables', icon: 'ni ni-bullet-list-67 text-red', path: '/tables'}"/> -->

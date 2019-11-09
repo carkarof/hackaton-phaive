@@ -3,39 +3,46 @@
     <div class="card-header border-0">
       <div class="row align-items-center">
         <div class="col">
-          <h3 class="mb-0">Page visits</h3>
+          <h3 class="mb-0">Entidades</h3>
         </div>
         <div class="col text-right">
-          <a href="#!" class="btn btn-sm btn-primary">See all</a>
+          <!-- <a href="#!" class="btn btn-sm btn-primary">See all</a> -->
+          <base-dropdown>
+              <base-button slot="title" size="sm" type="primary" class="dropdown-toggle">
+                Filtrar por
+              </base-button>
+              <a class="dropdown-item" href="#">Nome</a>
+              <a class="dropdown-item" href="#">Total Acolhimento</a>
+              <a class="dropdown-item" href="#">Até 3 meses</a>
+              <a class="dropdown-item" href="#">De 3 a 18 meses</a>
+              <a class="dropdown-item" href="#">Mais 18 meses</a>
+          </base-dropdown>
         </div>
       </div>
     </div>
 
-    <div class="table-responsive">
+    <div class="table-responsive" style="overflow-y: auto; height: 300px;">
       <base-table thead-classes="thead-light"
                   :data="tableData">
         <template slot="columns">
-          <th>Page name</th>
-          <th>Visitors</th>
-          <th>Unique users</th>
-          <th>Bounce rate</th>
+          <th>Cód</th>
+          <th>Nome</th>
+          <th>Acolhidos</th>
+          <th>Status</th>
         </template>
 
         <template slot-scope="{row}">
           <th scope="row">
-            {{row.page}}
+            {{row.id_entidade}}
           </th>
           <td>
-            {{row.visitors}}
+            {{row.nome}}
           </td>
           <td>
-            {{row.unique}}
+            {{row.total_acolhidos}}
           </td>
           <td>
-            <i class="fas fa-arrow-up text-success mr-3"
-               :class="row.bounceRateDirection === 'up' ? 'text-success': 'text-danger'">
-            </i>
-            {{row.bounceRate}}
+            {{row.status_entidade}}
           </td>
         </template>
 
@@ -45,48 +52,31 @@
   </div>
 </template>
 <script>
+import axios from "axios";
   export default {
     name: 'page-visits-table',
     data() {
       return {
-        tableData: [
-          {
-            page: '/argon/',
-            visitors: '4,569',
-            unique: '340',
-            bounceRate: '46,53%',
-            bounceRateDirection: 'up'
-          },
-          {
-            page: '/argon/index.html',
-            visitors: '3,985',
-            unique: '319',
-            bounceRate: '46,53%',
-            bounceRateDirection: 'down'
-          },
-          {
-            page: '/argon/charts.html',
-            visitors: '3,513',
-            unique: '294',
-            bounceRate: '36,49%',
-            bounceRateDirection: 'down'
-          },
-          {
-            page: '/argon/tables.html',
-            visitors: '2,050',
-            unique: '147',
-            bounceRate: '50,87%',
-            bounceRateDirection: 'up'
-          },
-          {
-            page: '/argon/profile.html',
-            visitors: '1,795',
-            unique: '190',
-            bounceRate: '46,53%',
-            bounceRateDirection: 'down'
-          }
-        ]
+        dados: [],
+        tableData: []
       }
+    },
+    methods: {
+      DadosEntidade: function (){
+         axios.get('http://localhost:8090/dashboard_entidades')
+            .then((response) => {
+              this.tableData = response.data;
+             console.log(this.tableData);
+            })
+            .catch((error) => {
+              // handle error
+              console.log(error);
+          })
+          
+      }
+    },
+    mounted(){
+        this.DadosEntidade();
     }
   }
 </script>
