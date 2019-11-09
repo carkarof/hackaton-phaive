@@ -89,24 +89,22 @@
                         </div>
                         <template>
                             <form @submit.prevent>
-                                <div class="pl-lg-1">
-                                    <div class="row">
-                                        <div class="col-xl-6 col-lg-6">
-                                            <stats-card title="Total traffic"
-                                                        type="gradient-red"
-                                                        sub-title="350,897"
-                                                        class="mb-4 mb-xl-0 card-dark"
-                                            >
+                                    <div class="pl-lg-1">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6">
+                                                <stats-card title="Total traffic"
+                                                            type="gradient-red"
+                                                            sub-title="350,897"
+                                                            class="mb-4 mb-xl-0 card-dark"
+                                                >
 
-                                                <template slot="footer">
-                                                    <span class="text-nowrap">12 acolhidos Atualmente</span>
-                                                </template>
-                                            </stats-card>
+                                                    <template slot="footer">
+                                                        <span class="text-nowrap">12 acolhidos Atualmente</span>
+                                                    </template>
+                                                </stats-card>
+                                            </div>
                                         </div>
-                                     </div>
-                                </div>
-
-                                
+                                    </div>
                             </form>
                         </template>
                     </card>
