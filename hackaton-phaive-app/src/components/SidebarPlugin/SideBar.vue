@@ -7,7 +7,7 @@
                 <span class="navbar-toggler-icon"></span>
             </navbar-toggle-button>
             <router-link class="navbar-brand" to="/">
-                <img :src="logo" class="navbar-brand-img" alt="...">
+                <img :src="logo" class="navbar-brand-img" alt="..." style="float: left;">
             </router-link>
 
             <slot name="mobile-right">
@@ -95,7 +95,7 @@
     props: {
       logo: {
         type: String,
-        default: 'img/brand/green.png',
+        default: 'img/brand/logo.png',
         description: 'Sidebar app logo'
       },
       autoClose: {

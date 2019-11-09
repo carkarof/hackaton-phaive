@@ -1,6 +1,6 @@
 <template>
   <footer class="footer px-4 col-lg-12 " style="position:fixed;bottom:0;">
-    <div class="row align-items-center justify-content-lg-between" >
+    <div class="row justify-content-lg-between" >
       <input type="button" class="btn btn-primary col-md-1" value="Enviar"/>
       
     </div>
