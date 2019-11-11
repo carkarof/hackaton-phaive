@@ -85,6 +85,15 @@
                                 <div class="col-8">
                                     <h3 class="mb-0">Entidades</h3>
                                 </div>
+                                <div class="col-4">
+                                    <base-input placeholder="Pesquisar Entidade"
+                                            class="input-group-alternative"
+                                            alternative=""
+                                            addon-right-icon="fas fa-search">
+                                    </base-input>
+                                </div>
+                                
+                                
                             </div>
                         </div>
                         <template>
@@ -96,6 +105,44 @@
                                                             type="gradient-red"
                                                             sub-title="350,897"
                                                             class="mb-4 mb-xl-0 card-dark"
+                                                >
+
+                                                    <template slot="footer">
+                                                        <span class="text-nowrap">12 acolhidos Atualmente</span>
+                                                    </template>
+                                                </stats-card>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6">
+                                                <stats-card title="Total traffic"
+                                                            type="gradient-red"
+                                                            sub-title="350,897"
+                                                            class="mb-4 mb-xl-0 card-n-select"
+                                                >
+
+                                                    <template slot="footer">
+                                                        <span class="text-nowrap">12 acolhidos Atualmente</span>
+                                                    </template>
+                                                </stats-card>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6">
+                                                <stats-card title="Total traffic"
+                                                            type="gradient-red"
+                                                            sub-title="350,897"
+                                                            class="mb-4 mb-xl-0 card-n-select" 
+                                                >
+
+                                                    <template slot="footer">
+                                                        <span class="text-nowrap">12 acolhidos Atualmente</span>
+                                                    </template>
+                                                </stats-card>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6">
+                                                <stats-card title="Total traffic"
+                                                            type="gradient-red"
+                                                            sub-title="350,897"
+                                                            class="mb-4 mb-xl-0 card-n-select"
                                                 >
 
                                                     <template slot="footer">
@@ -136,5 +183,10 @@
 <style>
     .card-dark{
         background-color: #172B4D;
+        margin-top: 5%;
+    }
+    .card-n-select{
+        box-shadow: #333232 0px 0px 1px;
+        margin-top: 5%;
     }
 </style>

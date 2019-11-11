@@ -11,8 +11,7 @@
                     <card type="default" header-classes="bg-transparent">
                         <div slot="header" class="row align-items-center">
                             <div class="col">
-                                <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
-                                <h5 class="h3 text-white mb-0">Sales value</h5>
+                                <h5 class="h3 text-white mb-0">Lotação</h5>
                             </div>
                             <div class="col">
                                 <ul class="nav nav-pills justify-content-end">
@@ -21,7 +20,7 @@
                                            href="#"
                                            :class="{active: bigLineChart.activeIndex === 0}"
                                            @click.prevent="initBigChart(0)">
-                                            <span class="d-none d-md-block">Month</span>
+                                            <span class="d-none d-md-block">Municipio</span>
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
@@ -30,7 +29,7 @@
                                            href="#"
                                            :class="{active: bigLineChart.activeIndex === 1}"
                                            @click.prevent="initBigChart(1)">
-                                            <span class="d-none d-md-block">Week</span>
+                                            <span class="d-none d-md-block">Lotação</span>
                                             <span class="d-md-none">W</span>
                                         </a>
                                     </li>
@@ -52,8 +51,7 @@
                     <card header-classes="bg-transparent">
                         <div slot="header" class="row align-items-center">
                             <div class="col">
-                                <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                                <h5 class="h3 mb-0">Total orders</h5>
+                                <h5 class="h3 mb-0">Adoção do Ano</h5>
                             </div>
                         </div>
 
@@ -78,6 +76,7 @@
                 </div>
             </div>
             <!--End tables-->
+
         </div>
 
     </div>
@@ -103,8 +102,8 @@
       return {
         bigLineChart: {
           allData: [
-            [0, 20, 10, 30, 15, 40, 20, 60, 60],
-            [0, 20, 5, 25, 10, 30, 15, 40, 40]
+            [12, 10, 5, 15, 17, 5],
+            [15, 8, 4, 7, 14, 13]
           ],
           activeIndex: 0,
           chartData: {
@@ -115,10 +114,10 @@
         },
         redBarChart: {
           chartData: {
-            labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            labels: ['2010', '2011', '2012', '2013', '2014', '2015'],
             datasets: [{
               label: 'Sales',
-              data: [25, 20, 30, 22, 17, 29]
+              data: [12, 10, 5, 15, 17, 5]
             }]
           }
         }
@@ -133,7 +132,7 @@
               data: this.bigLineChart.allData[index]
             }
           ],
-          labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+          labels: ['Salvador', 'São Felipe', 'Jacobina', 'Jacuípe', 'Feira de Santana'],
         };
         this.bigLineChart.chartData = chartData;
         this.bigLineChart.activeIndex = index;

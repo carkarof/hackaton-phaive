@@ -33,7 +33,7 @@ $app->get('/', function(Request $request, Response $response, $args){
  * Routes responsaveis por trazer e entregar ao servidor as informações das Entidades
  */
 $app->get('/entidade', EntidadeController::class . ':Listar');
-$app->post('/entidade', EntidadeController::class . ':Criar');
+$app->post('/entidade', EntidadeController::class . ':Salvar');
 $app->put('/entidade/{id}', EntidadeController::class . ':Atualizar');
 
 /**
@@ -41,7 +41,7 @@ $app->put('/entidade/{id}', EntidadeController::class . ':Atualizar');
  * Routes responsaveis por trazer e entregar ao servidor as informações dos Promotores
  */
 $app->get('/promotor', PromotorController::class . ':Listar');
-$app->post('/promotor', PromotorController::class . ':Criar');
+$app->post('/promotor', PromotorController::class . ':Salvar');
 $app->put('/promotor/{id}', PromotorController::class . ':Atualizar');
 
 /**
@@ -49,7 +49,7 @@ $app->put('/promotor/{id}', PromotorController::class . ':Atualizar');
  * Routes responsaveis por trazer e entregar ao servidor as informações das Inspeção
  */
 $app->get('/inspecao', InspecaoController::class . ':Listar');
-$app->post('/inspecao', InspecaoController::class . ':Criar');
+$app->post('/inspecao', InspecaoController::class . ':Salvar');
 $app->put('/inspecao/{id}', InspecaoController::class . ':Atualizar');
 
 /**
@@ -57,7 +57,7 @@ $app->put('/inspecao/{id}', InspecaoController::class . ':Atualizar');
  * Routes responsaveis por trazer e entregar ao servidor as informações dos Historico_inspeçao
  */
 $app->get('/historico_inspecao', Historico_inspecaoController::class . ':Listar');
-$app->post('/historico_inspecao', Historico_inspecaoController::class . ':Criar');
+$app->post('/historico_inspecao', Historico_inspecaoController::class . ':Salvar');
 $app->put('/historico_inspecao/{id}', Historico_inspecaoController::class . ':Atualizar');
 
 /**
@@ -65,7 +65,7 @@ $app->put('/historico_inspecao/{id}', Historico_inspecaoController::class . ':At
  * Routes responsaveis por trazer e entregar ao servidor as informações dos Documentos
  */
 $app->get('/documentos', DocumentosController::class . ':Listar');
-$app->post('/documentos', DocumentosController::class . ':Criar');
+$app->post('/documentos', DocumentosController::class . ':Salvar');
 $app->put('/documentos/{id}', DocumentosController::class . ':Atualizar');
 
 /**
