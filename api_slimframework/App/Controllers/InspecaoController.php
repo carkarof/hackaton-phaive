@@ -14,8 +14,7 @@ final class InspecaoController {
      * @return Response
      */
     public function Listar(Request $request, Response $response, array $args): Response
-    {
-        
+    {        
         $InspecaoDAO = new InspecaoDAO;
         $dados = $DashboardDAO->Listar();
 

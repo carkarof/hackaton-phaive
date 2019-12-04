@@ -12,7 +12,7 @@
             </slot>
         </div>
         <div class="card-body" :class="bodyClasses" v-if="!noBody">
-            <slot></slot>
+            <slot ></slot>
         </div>
 
         <slot v-if="noBody"></slot>

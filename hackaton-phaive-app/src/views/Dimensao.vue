@@ -9,11 +9,22 @@
             </div>
         </base-header>
         <div>
-             <Card2/>
-             <Card2/>
-             <Card2/>
-             <Card2/>
-             <Card2/> 
+             <Card2 salvar-resp="SalvarResposta" 
+             pergunta="Voce esta funcionando ?"
+             id-pergunta="1"
+             />
+             <Card2 salvar-resp="SalvarResposta"
+             pergunta="Voce esta correto disso ?"
+             id-pergunta="2"/>
+             <Card2 salvar-resp="SalvarResposta"
+             pergunta="Voce tem certeza ?"
+             id-pergunta="3"/>
+             <Card2 salvar-resp="SalvarResposta"
+             pergunta="Voce vai embora ?"
+             id-pergunta="4"/>
+             <Card2 salvar-resp="SalvarResposta"
+             pergunta="Vai embora mesmo ?"
+             id-pergunta="5"/> 
         </div>
         <content-footer />   
     </div>
@@ -26,19 +37,16 @@ import ContentFooter from '../layout/ContentFooter';
     components:{Card2,ContentFooter},
     data() {
       return {
-        model: {
-          username: '',
-          email: '',
-          firstName: '',
-          lastName: '',
-          address: '',
-          city: '',
-          country: '',
-          zipCode: '',
-          about: '',
+        model: {          
+          respostas:[]
         }
       }
     },
+    methods:{
+      SalvarResposta(){
+        alert("resposta")
+      }
+    }
   };
 </script>
 <style></style>

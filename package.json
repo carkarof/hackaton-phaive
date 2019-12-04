@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "mysql2": "^2.0.1",
     "v-mask": "^2.0.2"
   }
 }
