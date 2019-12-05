@@ -35,6 +35,7 @@ app.use(cors());
  const permissoes = require('../src/routes/permissoes')
  const totem = require('../src/routes/totem')
  const totem_app = require('../src/routes/totem_app')
+ const inspecoes = require('../src/routes/inspecao')
  
  /** Registro das rotas */
  app.use(router_prefix+"/auth",auth_router)
@@ -46,6 +47,7 @@ app.use(cors());
  app.use(router_prefix+"/permissoes",permissoes)
  app.use(router_prefix+"/totem",totem)
  app.use(router_prefix+"/totem-app",totem_app)
+ app.use(router_prefix+"/inspecoes",inspecoes)
 
  /**
   * Ativar Passport e Middleware de Rotas JWT

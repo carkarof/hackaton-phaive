@@ -1,3 +1,6 @@
+create DATABASE IMO;
+use IMO;
+
 create table TipoUsuario (
 	IdTipoUsuario bigint primary key auto_increment,
     Descricao varchar(150) not null
@@ -88,6 +91,7 @@ create table Dimensoes (
 create table Perguntas (
 	IdPerguntas bigint primary key auto_increment,
     IdDimensao bigint,
+    Descricao longtext,
 	FOREIGN KEY (IdDimensao) REFERENCES Dimensoes(IdDimensao)
 );
 

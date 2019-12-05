@@ -5,7 +5,7 @@ const Sequelize  = require('sequelize');
 /**
  * Configuracoes de banco de dados
  */
-const config_sequelize = new Sequelize('phaive','root','',{    
+const config_sequelize = new Sequelize('imo','root','',{    
     dialect:'mysql'
 })
 
