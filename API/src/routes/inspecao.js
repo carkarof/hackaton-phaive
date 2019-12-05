@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let controller = require('../controllers/InspecaoController');
-let auth = require('../../config/AuthJwt')();
+// let auth = require('../../config/AuthJwt')();
 
 /** 
  * Rotas Vinculadas aos seus repectivos metodos no controller

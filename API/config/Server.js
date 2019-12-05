@@ -26,35 +26,14 @@ app.use(cors());
  */
  const router_prefix = '/api/v1'
 
- const auth_router = require('../src/routes/auth')
- const usuario_master = require('../src/routes/usuario_master')
- const instituicoes = require('../src/routes/instituicoes')
- const setores = require('../src/routes/setores')
- const setores_icones = require('../src/routes/setores_icones')
- const usuarios_instituicoes = require('../src/routes/usuario_instituicoes')
- const permissoes = require('../src/routes/permissoes')
- const totem = require('../src/routes/totem')
- const totem_app = require('../src/routes/totem_app')
+ 
  const inspecoes = require('../src/routes/inspecao')
  
  /** Registro das rotas */
- app.use(router_prefix+"/auth",auth_router)
- app.use(router_prefix+"/usuarios-admin",usuario_master)
- app.use(router_prefix+"/instituicoes",instituicoes)
- app.use(router_prefix+"/setores",setores)
- app.use(router_prefix+"/setores-icones",setores_icones)
- app.use(router_prefix+"/usuario-instituicoes",usuarios_instituicoes)
- app.use(router_prefix+"/permissoes",permissoes)
- app.use(router_prefix+"/totem",totem)
- app.use(router_prefix+"/totem-app",totem_app)
+
  app.use(router_prefix+"/inspecoes",inspecoes)
 
- /**
-  * Ativar Passport e Middleware de Rotas JWT
- */
- const auth = require("../config/AuthJwt")();
- app.use(auth.initialize())
-
+ 
  /**
   * Pastas estaticas entregues ao cliente
   */
